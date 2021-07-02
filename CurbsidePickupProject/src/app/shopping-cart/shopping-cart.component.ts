@@ -66,9 +66,9 @@ export class ShoppingCartComponent implements OnInit {
 //   updateAmounts();
 // });
 
-goBack(): void {
-  this.location.back();
-}
+// goBack(): void {
+//   this.location.back();
+// }
   
 
 

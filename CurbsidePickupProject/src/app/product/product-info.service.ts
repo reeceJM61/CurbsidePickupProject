@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductInfoService {
+  getVehicles(): any {
+    throw new Error('Method not implemented.');
+  }
 
   products = [
     {id: 1, title: "Phone", price: 1000, favorite: false, category: "Electronics"},
