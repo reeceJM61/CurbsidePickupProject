@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppRoutingModule } from '../app-routing.module';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -6,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
+  location: any;
+ 
 
   constructor() { }
 
   ngOnInit(): void {
+
+    
+
   }
+
+  
 
   // $(document).ready(function () {
   //   updateAmounts();
@@ -57,6 +65,11 @@ export class ShoppingCartComponent implements OnInit {
 //   }
 //   updateAmounts();
 // });
+
+goBack(): void {
+  this.location.back();
+}
   
+
 
 }
