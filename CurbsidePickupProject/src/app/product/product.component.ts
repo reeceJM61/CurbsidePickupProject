@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
     this.products = this.vService.getVehicles()
   }
 
-filterItems(e: { target: { value: string; }; }){ //quick fix for 'e'
+filterItems(e:any){ //quick fix for 'e'
    // console.log(e.target.value)
    this.products = this.vService.filter(e.target.value)
 }
@@ -31,6 +31,10 @@ setFavorite(p: { brand: string; }){ // quick fix for 'p'
 
 addToInventory(p: any){ // quick fix for 'p'
     this.iService.add(p)
+}
+
+updateFavorite() {
+  
 }
 
 }

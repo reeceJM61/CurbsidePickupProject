@@ -4,9 +4,9 @@
         <option>Food</option>
         <option>Clothing</option>
         <option>Pets</option>
-        </select> -->
+        </select>
 
-        <!-- <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of products">
+        <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of products">
         
         <h4>{{p.title}} ({{p.category}})</h4>
 
@@ -17,6 +17,13 @@
         <button (click)="addToInventory(p)">Add to Inventory</button>
 
         </div> -->
+
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <!-- <mat-grid-tile>Electronics</mat-grid-tile>
+            <mat-grid-tile>Food</mat-grid-tile>
+            <mat-grid-tile>Clothing</mat-grid-tile>
+            <mat-grid-tile>Pets</mat-grid-tile> -->
+          </mat-grid-list>
 
 
 

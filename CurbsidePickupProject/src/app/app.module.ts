@@ -6,6 +6,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductComponent } from './product/product.component';
 import { ProductInfoService } from './product/product-info.service';
 import { InventoryComponent } from './inventory/inventory.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { MatGridTileModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { InventoryComponent } from './inventory/inventory.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatGridListModule,
+    BrowserAnimationsModule
     
   ],
   providers: [ProductInfoService],
