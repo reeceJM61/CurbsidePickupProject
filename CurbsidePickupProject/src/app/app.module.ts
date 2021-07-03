@@ -6,7 +6,11 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductComponent } from './product/product.component';
 import { ProductInfoService } from './product/product-info.service';
 import { InventoryComponent } from './inventory/inventory.component';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ElectronicsComponent } from './product/electronics/electronics.component';
+import { FoodComponent } from './product/food/food.component';
+import { ClothingComponent } from './product/clothing/clothing.component';
+import { PetsComponent } from './product/pets/pets.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +18,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ShoppingCartComponent,
     ProductComponent,
     InventoryComponent,
+    ElectronicsComponent,
+    FoodComponent,
+    ClothingComponent,
+    PetsComponent,
 
   ],
   imports: [

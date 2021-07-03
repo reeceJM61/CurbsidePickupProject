@@ -17,18 +17,19 @@
         <button (click)="addToInventory(p)">Add to Inventory</button>
 
         </div> -->
-
+    <nav>
         <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile>Electronics</mat-grid-tile>
-            <mat-grid-tile>Food</mat-grid-tile>
-            <mat-grid-tile>Clothing</mat-grid-tile>
-            <mat-grid-tile>Pets</mat-grid-tile>
+            <mat-grid-tile><a routerLink="/electronics">Electronics  </a></mat-grid-tile>
+            <mat-grid-tile><a routerLink="/food">Food  </a></mat-grid-tile>
+            <mat-grid-tile><a routerLink="/clothing">Clothing  </a></mat-grid-tile>
+            <mat-grid-tile><a routerLink="/pets">Pets  </a></mat-grid-tile>
           </mat-grid-list>
+        </nav>
 
-
+        <router-outlet></router-outlet>
 
 <p>
     product works!
-    {{index}}
+    <!-- {{index}} -->
 </p>
 
