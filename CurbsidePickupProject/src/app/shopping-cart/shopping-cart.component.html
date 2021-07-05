@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <p *ngFor="let i of items">{{i.title}}</p>
+    <!-- <p *ngFor="let i of items">{{i.title}}</p> -->
 
     <div class="container-fluid mt-5">
         <h2 class="mb-5 text-center">Shopping Cart</h2>
@@ -52,17 +52,17 @@
                                 </td>
                                 <td>
                                     <div class="button-container">
-                                        <button class="cart-qty-plus" type="button" value="+">+
+                                        <button class="cart-qty-plus" type="button" value="+" (click)="quantityIncrement()">+
                                         </button>
-                                        <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
-                                        <button class="cart-qty-minus" type="button" value="-">-
+                                        <input type="text" name="qty" min="0" class="qty form-control" value="{{quantity}}"/>
+                                        <button class="cart-qty-minus" type="button" value="-" (click)="quantityDecrement()">-
                                         </button>
                                     </div>
                                 </td>
-                                <td>
-                                    <input type="text" value="72" class="price form-control" disabled>
-                                </td>
-                                <td align="right">$ <span id="amount" class="amount">{{i.price}}</span>
+                                <!-- <td>
+                                    <input type="text" value='' class="price form-control" disabled>
+                                </td> -->
+                                <td align="right">$ <span id="amount" class="amount">{{i.price * quantity}}</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -70,8 +70,8 @@
                             <tr>
                                 <td colspan="4"></td>
                                 <td align="right">
-                                    <strong>TOTAL = ${{total}}
-                                        <span id="total" class="total">0</span>
+                                    <strong>TOTAL = $
+                                        <span id="total" class="total">{{total}}</span>
                                     </strong>
                                 </td>
                             </tr>

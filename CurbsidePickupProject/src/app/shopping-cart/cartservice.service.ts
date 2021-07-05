@@ -11,6 +11,8 @@ export class CartserviceService {
   items: Array<Iproducts> = []
   addToCart: any
 
+  quantity: number = 1
+
   add(product: Iproducts) {
     this.items.push(product)
     
@@ -20,6 +22,14 @@ export class CartserviceService {
 
   getItems() {
     return this.items
+  }
+
+  increment() {
+    return this.quantity += 1
+  }
+
+  decrement() {
+    return this.quantity -= 1
   }
 
   constructor() { }

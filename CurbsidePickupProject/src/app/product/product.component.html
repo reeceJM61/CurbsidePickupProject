@@ -7,17 +7,17 @@
         <option>Pets</option>
         </select>
 
-        <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
+        <!-- <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
         
         <h4>{{p.title}} ({{p.category}})</h4>
 
         ${{p.price}}<br>
 
-        <!-- <button (click)="updateFavorite(p)">Yes</button> -->
+        <button (click)="updateFavorite(p)">Yes</button>
         
         <button (click)="addToCart(p)">Add to Cart</button>
 
-        </div> 
+        </div>  -->
 
         <!-- <ul class="product">
           <li>
@@ -27,7 +27,7 @@
 
     
 
-    <!-- <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
+    <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
         <mat-grid-list cols="2" rowHeight="2:1" (change)="filterItems($event)">
 
           <mat-grid-tile (click)="addToCart(p)">
@@ -36,7 +36,7 @@
 
           </mat-grid-tile>
         </mat-grid-list>
-    </div> -->
+    </div>
         
 
 
