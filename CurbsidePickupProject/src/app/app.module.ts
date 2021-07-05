@@ -6,7 +6,6 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductComponent } from './product/product.component';
 import { ProductService } from './product/models/productservice.service';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { PetsComponent } from './product/pets/pets.component';
 import { CartserviceService } from './shopping-cart/cartservice.service';
 
 @NgModule({
@@ -14,7 +13,7 @@ import { CartserviceService } from './shopping-cart/cartservice.service';
     AppComponent,
     ShoppingCartComponent,
     ProductComponent,
-    PetsComponent,
+    
     
 
   ],
