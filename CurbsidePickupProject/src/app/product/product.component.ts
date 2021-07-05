@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 //import { ActivatedRoute } from '@angular/router';
-import { InventoryService } from '../inventory/inventory.service';
-import { ProductInfoService } from './product-info.service';
+import { ProductService} from './models/productservice.service';
+import { Products } from './models/products'
+import { CartserviceService } from '../shopping-cart/cartservice.service';
+import { Iproducts } from './models/iproducts';
 
 
 @Component({
@@ -10,34 +12,60 @@ import { ProductInfoService } from './product-info.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  //index!: number; //indefinate assertion
-  products: any;
 
-  constructor(private vService:ProductInfoService,private iService:InventoryService) { } // TODO: private vService:VehiclesService,private iService:InventoryService
-  /*private route: ActivatedRoute,*/
+  
+  
+  inventory: Array<Iproducts> = []
+ 
 
-  // Caution
-  ngOnInit(): void {
-    //this.route.params.subscribe(params => this.index = params['id'])
-    this.products = this.vService.getVehicles()
+  //   new Products(1, "Phone", 1000, false, "Electronics"),
+  //   new Products(2, "Laptop", 2000, false, "Electronics"),
+  //   new Products(3, "PlayStation", 1000, false, "Electronics"),
+  //   new Products(4, "Milk", 2, false, "Food"),
+  //   new Products(5, "Cereal", 4, false, "Food"),
+  //   new Products(6, "Eggs", 2, false, "Food"),
+  //   new Products(7, "Shirt", 20, false, "Clothing"),
+  //   new Products(8, "Shoes", 30, false, "Clothing"),
+  //   new Products(9, "Dog Food", 20, false, "Pets"),
+  //   new Products(10, "Cat Food", 20, false, "Pets")
+
+  // ]
+ 
+
+  constructor(private pService: ProductService, private cService: CartserviceService) {
+    //this.inventory = pService.getInventory()
+  } 
+
+  ngOnInit() {
+    this.inventory = this.pService.getInventory()
   }
 
-filterItems(e:any){ //quick fix for 'e'
-  //this.route.params.subscribe(params => this.index = params['id'])
-   // console.log(e.target.value)
-   this.products = this.vService.filter(e.target.value)
+  // setFavorite(p) {
+  //   return this.pService.setFavorite(p.favorite)
+  // }
+
+  filterItems(e: any) {
+    this.inventory = this.pService.filter(e.target.value)
+  }
+
+  addToCart(p:any){ // adds item to cart based on array index
+    this.cService.add(p)
+  }
+
+
+
+  //title:string = 'Products'
+
+  // function doSomething() {
+  //   for (let i = 0; i < 5; i++) {
+  //     console.log(i)
+  //   }
+  //   console.log('Finally: ' + i)
+  // }
+
+  // doSomething()
+
+
+
 }
 
-setFavorite(p: { brand: string; }){ // quick fix for 'p'
-    this.vService.updateFavorite(p.brand)
-}
-
-addToInventory(p: any){ // quick fix for 'p'
-    this.iService.add(p)
-}
-
-// updateFavorite() {
-  
-// }
-
-}

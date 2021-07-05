@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductComponent } from '../product.component';
+import { ProductService } from '../models/productservice.service';
 
 @Component({
   selector: 'app-electronics',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElectronicsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    // super();
+    // super.ngOnInit();
+   }
 
   ngOnInit(): void {
+
+
+
   }
 
 }

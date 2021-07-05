@@ -1,23 +1,50 @@
-<h4>Products</h4>
-        <!-- <select (change)="filterItems($event)">
+<h2>Products</h2>
+
+<!-- (change)="filterItems($event)" -->
+
+        <select (change)="filterItems($event)">
         <option>Electronics</option>
         <option>Food</option>
         <option>Clothing</option>
         <option>Pets</option>
         </select>
 
-        <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of products">
+        <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
         
         <h4>{{p.title}} ({{p.category}})</h4>
 
-        {{p.price}}<br>
+        ${{p.price}}<br>
 
-        <button (click)="updateFavorite(p)">Yes</button>
+        <!-- <button (click)="updateFavorite(p)">Yes</button> -->
         
-        <button (click)="addToInventory(p)">Add to Inventory</button>
+        <button (click)="addToCart(p)">Add to Cart</button>
 
-        </div> -->
-    <nav>
+        </div> 
+
+        <!-- <ul class="product">
+          <li>
+            <span class="badge">{{inventory.id}}</span> {{inventory.title}}
+          </li>
+        </ul> -->
+
+
+
+    <!-- <div *ngFor="let p of inventory">
+
+        <h4>{{p.title}} </h4>
+        <p><span>ID: {{p.id}}, Price: ${{p.price}}</span><p>
+
+    </div> -->
+
+    <!-- <div *ngFor="let products of products">
+
+        <h4>{{products.title}} </h4>
+        <p><span>ID: {{products.id}}, Price: ${{products.price}}</span><p>
+
+    </div> -->
+    
+
+    <!-- <nav>
         <mat-grid-list cols="2" rowHeight="2:1">
             <mat-grid-tile><a routerLink="/electronics">Electronics  </a></mat-grid-tile>
             <mat-grid-tile><a routerLink="/food">Food  </a></mat-grid-tile>
@@ -26,10 +53,7 @@
           </mat-grid-list>
         </nav>
 
-        <router-outlet></router-outlet>
+        <router-outlet></router-outlet> -->
 
-<p>
-    product works!
-    <!-- {{index}} -->
-</p>
+
 
