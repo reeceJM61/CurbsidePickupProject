@@ -6,9 +6,6 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductComponent } from './product/product.component';
 import { ProductService } from './product/models/productservice.service';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ElectronicsComponent } from './product/electronics/electronics.component';
-import { FoodComponent } from './product/food/food.component';
-import { ClothingComponent } from './product/clothing/clothing.component';
 import { PetsComponent } from './product/pets/pets.component';
 import { CartserviceService } from './shopping-cart/cartservice.service';
 
@@ -17,9 +14,6 @@ import { CartserviceService } from './shopping-cart/cartservice.service';
     AppComponent,
     ShoppingCartComponent,
     ProductComponent,
-    ElectronicsComponent,
-    FoodComponent,
-    ClothingComponent,
     PetsComponent,
     
 

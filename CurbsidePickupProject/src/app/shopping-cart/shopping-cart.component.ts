@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppRoutingModule } from '../app-routing.module';
+import { Iproducts } from '../product/models/iproducts';
+import { ProductService } from '../product/models/productservice.service';
+import { CartserviceService } from './cartservice.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,12 +10,42 @@ import { AppRoutingModule } from '../app-routing.module';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  location: any;
+  
+items: Array<Iproducts> = []
+totalPrice: number = 0
+total: number = 0
+
  
 
-  constructor() { }
+  constructor(private pService: ProductService, private cService: CartserviceService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.items = this.cService.getItems()
+
+    this.items.forEach(i => {
+      this.total += i.price
+    })
+
+    this.totalPrice = this.total
+
+    // this.cService.getItems().subscribe((data:[]) => {
+    //   this.items = data 
+    //   let total = 0
+    //   this.items.forEach(i => {
+    //     total += i.price
+    //   })
+    //   this.totalPrice = total
+    // }
+
+    // this.cService.getItems().subscribe((data:[]) => {
+    //   this.items = data 
+    //   let total = 0
+    //   this.items.forEach(i => {
+    //     total += i.price
+    //   })
+    //   this.totalPrice = total
+    // }
 
     
 

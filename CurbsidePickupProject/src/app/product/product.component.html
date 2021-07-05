@@ -1,7 +1,5 @@
 <h2>Products</h2>
 
-<!-- (change)="filterItems($event)" -->
-
         <select (change)="filterItems($event)">
         <option>Electronics</option>
         <option>Food</option>
@@ -27,33 +25,19 @@
           </li>
         </ul> -->
 
-
-
-    <!-- <div *ngFor="let p of inventory">
-
-        <h4>{{p.title}} </h4>
-        <p><span>ID: {{p.id}}, Price: ${{p.price}}</span><p>
-
-    </div> -->
-
-    <!-- <div *ngFor="let products of products">
-
-        <h4>{{products.title}} </h4>
-        <p><span>ID: {{products.id}}, Price: ${{products.price}}</span><p>
-
-    </div> -->
     
 
-    <!-- <nav>
-        <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile><a routerLink="/electronics">Electronics  </a></mat-grid-tile>
-            <mat-grid-tile><a routerLink="/food">Food  </a></mat-grid-tile>
-            <mat-grid-tile><a routerLink="/clothing">Clothing  </a></mat-grid-tile>
-            <mat-grid-tile><a routerLink="/pets">Pets  </a></mat-grid-tile>
-          </mat-grid-list>
-        </nav>
+    <!-- <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
+        <mat-grid-list cols="2" rowHeight="2:1" (change)="filterItems($event)">
 
-        <router-outlet></router-outlet> -->
+          <mat-grid-tile (click)="addToCart(p)">
+            {{p.title}} ({{p.category}})
+            ${{p.price}}  
+
+          </mat-grid-tile>
+        </mat-grid-list>
+    </div> -->
+        
 
 
 

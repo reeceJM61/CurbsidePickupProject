@@ -13,6 +13,8 @@
 </head>
 <body>
 
+    <p *ngFor="let i of items">{{i.title}}</p>
+
     <div class="container-fluid mt-5">
         <h2 class="mb-5 text-center">Shopping Cart</h2>
         <div class="row justify-content-center">
@@ -30,7 +32,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody *ngFor= "let i of items">
                             <tr>
                                 <td>
                                     <div class="product-img">
@@ -44,7 +46,7 @@
                                 <td>
                                     <div class="product-img">
                                         <div class="product-img">
-                                                <img src="1.jpg" alt="">
+                                            <p *ngFor="let i of items">{{i.title}}</p>
                                         </div>
                                     </div>
                                 </td>
@@ -60,7 +62,7 @@
                                 <td>
                                     <input type="text" value="72" class="price form-control" disabled>
                                 </td>
-                                <td align="right">$ <span id="amount" class="amount">0</span>
+                                <td align="right">$ <span id="amount" class="amount">{{i.price}}</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -68,7 +70,7 @@
                             <tr>
                                 <td colspan="4"></td>
                                 <td align="right">
-                                    <strong>TOTAL = $ 
+                                    <strong>TOTAL = ${{total}}
                                         <span id="total" class="total">0</span>
                                     </strong>
                                 </td>
@@ -80,7 +82,6 @@
         </div>
     </div>
 
-    <!-- <button (click)="goBack()">go back</button> -->
     
 </body>
 </html>
