@@ -1,1 +1,1 @@
-# CurbsidePickupProject
+# E-commerce Project
