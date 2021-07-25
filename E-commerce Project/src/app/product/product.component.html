@@ -1,0 +1,43 @@
+<h2>Products</h2>
+
+        <select (change)="filterItems($event)">
+        <option>Electronics</option>
+        <option>Food</option>
+        <option>Clothing</option>
+        <option>Pets</option>
+        </select>
+
+        <!-- <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
+        
+        <h4>{{p.title}} ({{p.category}})</h4>
+
+        ${{p.price}}<br>
+
+        <button (click)="updateFavorite(p)">Yes</button>
+        
+        <button (click)="addToCart(p)">Add to Cart</button>
+
+        </div>  -->
+
+        <!-- <ul class="product">
+          <li>
+            <span class="badge">{{inventory.id}}</span> {{inventory.title}}
+          </li>
+        </ul> -->
+
+    
+
+    <div [ngClass]="{favorites:p.favorite}" *ngFor="let p of inventory">
+        <mat-grid-list cols="2" rowHeight="2:1" (change)="filterItems($event)">
+
+          <mat-grid-tile (click)="addToCart(p)">
+            {{p.title}} ({{p.category}})
+            ${{p.price}}  
+
+          </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+        
+
+
+
